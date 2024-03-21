@@ -1,0 +1,12 @@
+<img src="assets/img/cover.png" style="width: 100%;">
+<h1>實驗室公告</h1>
+<div id="article-parent">
+    <div class="article" *ngFor="let d of data">
+        <div class="candy-header"><span class="single">{{ d.date | date:'yyyy-MM-dd' }}</span></div>
+        <span class="content">
+            <ng-container *ngFor="let e of d.contents">
+                {{ e }}
+            </ng-container>
+        </span>
+    </div>
+</div>

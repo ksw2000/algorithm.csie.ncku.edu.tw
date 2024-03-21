@@ -1,0 +1,37 @@
+<h1>實驗室成員</h1>
+<p>實驗室位置: 資訊系館新大樓8F 65803</p>
+<h2>博士班成員</h2>
+<div class="card-list">
+    <blockquote class="card" *ngFor="let e of phd">
+        <img class="card-left" *ngIf="e.img" src="assets/members/{{ e.year}}_{{ e.id }}.jpg"/>
+        <img class="card-left" *ngIf="!e.img" src="assets/members/default.jpg"/>
+        <div class="card-right">
+            <p class="name">{{ e.name }}</p>
+            <p><i class="material-icons">person</i>{{ e.year }}碩</p>
+        </div>
+    </blockquote>
+</div>
+
+<h2>碩士班成員</h2>
+<div class="card-list">
+    <blockquote class="card" *ngFor="let e of master">
+        <img class="card-left" *ngIf="e.img" src="assets/members/{{ e.year}}_{{ e.id }}.jpg"/>
+        <img class="card-left" *ngIf="!e.img" src="assets/members/default.jpg"/>
+        <div class="card-right">
+            <p class="name">{{ e.name }}</p>
+            <p><i class="material-icons">person</i>{{ e.year }}碩</p>
+        </div>
+    </blockquote>
+</div>
+
+<h2>已畢業成員(碩士班)</h2>
+<div class="card-list">
+    <blockquote class="card" *ngFor="let e of masterGraduated">
+        <img class="card-left" *ngIf="e.img" src="assets/members/{{ e.year}}_{{ e.id }}.jpg"/>
+        <img class="card-left" *ngIf="!e.img" src="assets/members/default.jpg"/>
+        <div class="card-right">
+            <p class="name">{{ e.name }}</p>
+            <p><i class="material-icons">person</i>{{ e.year }}碩</p>
+        </div>
+    </blockquote>
+</div>

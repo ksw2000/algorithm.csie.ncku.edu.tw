@@ -1,0 +1,22 @@
+.article {
+    align-items: center;
+    display: flex;
+    border-left: 0;
+    flex-direction: row;
+    padding: 0
+}
+
+.article span.content {
+    font-size: inherit;
+    padding: 0 0 0 8px
+}
+
+@media screen and (max-width: 500px) {
+    .candy-header{
+        align-self: unset;
+    }
+    .article {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
