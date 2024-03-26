@@ -13,6 +13,7 @@ export const routes: Routes = [
     { path: 'publications', component: PublicationsComponent },
     { path: 'members', component: MembersComponent },
     { path: 'courses', component: CoursesComponent },
+    { path: 'courses/:id', component: CoursesComponent },
     { path: '', component: HomeComponent },
     { path: '**', pathMatch: 'full', component: PageNotFoundComponent }
 ];

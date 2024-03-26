@@ -1,0 +1,14 @@
+section {
+	box-sizing: border-box;
+	margin: 0px auto;
+	padding: 10px;
+	width: 100%;
+}
+
+section.center{
+	text-align: center;
+}
+
+.error{
+	color: #ff5a5a;
+}

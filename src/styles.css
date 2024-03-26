@@ -278,18 +278,6 @@ footer table td img {
 }
 
 /*----------------------------------------------form----------------------------------------------*/
-
-section {
-	box-sizing: border-box;
-	margin: 0px auto;
-	margin-top: 80px;
-	margin-bottom: 80px;
-	max-width: 500px;
-	padding: 10px;
-	text-align: center;
-	width: 100%;
-}
-
 input {
 	border: 1px solid var(--dark-gray);
 	border-radius: 8px;
@@ -309,14 +297,12 @@ input {
 input[type="text"],
 input[type="password"] {
 	background-color: transparent;
-	letter-spacing: 2px;
 	padding: 0px 10px;
 }
 
 input[type="button"] {
 	background-color: transparent;
 	cursor: pointer;
-	letter-spacing: 10px;
 }
 
 select {

@@ -1,4 +1,38 @@
-<p>有任何問題請洽助教信箱 <a href="matilto:algoalgogo&#64;gmail.com">algoalgogo&#64;gmail.com</a></p>
-<p>密碼為您的學號</p>
-<p>If you have any question, please email to <a href="matilto:algoalgogo&#64;gmail.com">algoalgogo&#64;gmail.com</a></p>
-<p>Please input your own password i.e., your sutdentID. Thank you!</p>
+<h1>Courses</h1>
+<section *ngIf="checkingLogin">
+    <div class="loader"></div>
+</section>
+
+<section id="login" class="center" *ngIf="!checkingLogin && !isLogin">
+    <p>To access the courses page, please input your student ID.</p>
+    <input autocomplete="off" type="text" name="studentID" placeholder="student ID" [(ngModel)]="inputStudentID" (keydown)="keyEnter($event)" autofocus />
+    <input type="button" value="Login" (click)="login()" />
+    <p *ngIf="loginError !== ''" class="error">{{ loginError }}</p>
+    <p>If you have any question, please email to <a href="matilto:algoalgogo&#64;gmail.com">algoalgogo&#64;gmail.com</a>
+    </p>
+</section>
+
+<section *ngIf="!checkingLogin && isLogin && id == ''">
+    <ul>
+        <li *ngFor="let d of dataList"><a routerLink="/courses/{{d.key}}">{{d.year}} {{d.season}} {{d.nameEN}} &#40;{{d.nameZH}}&#41;</a></li>
+    </ul>
+</section>
+
+<section *ngIf="!checkingLogin && isLogin && id !== '' && data !== null">
+    <h2>{{data.nameZH}} ({{data.nameEN}}) {{data.season}}, {{data.year}}</h2>
+    <ul>
+        <li>Instructor: Sun-Yuan Hsieh (謝孫源)</li>
+        <li>Email: <a href="mailto:hsiehsy&#64;mail.ncku.edu.tw">hsiehsy&#64;mail.ncku.edu.tw</a></li>
+        <li>Office: 資訊系館新大樓11F 65B11</li>
+        <li>Tel: 06-2757575 ext 62520 #2803</li>
+        <li>Fax: (06)2747076</li>
+    </ul>
+    <h3>檔案櫃</h3>
+    <ul *ngIf="data.files !== null && data.files && data.files.files !== null">
+        <li *ngFor="let f of data.files.files"><a target="_blank" href="{{f.url}}">{{f.name}}</a></li>
+    </ul>
+    <h3>TA List</h3>
+    <ul>
+        <li *ngFor="let ta of data.taList">{{ta}}</li>
+    </ul>
+</section>
