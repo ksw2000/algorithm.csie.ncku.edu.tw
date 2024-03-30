@@ -40,7 +40,6 @@ export class CoursesComponent {
     this.services.pushLogin({
       student_id: this.inputStudentID
     }).subscribe((res) => {
-      console.log(res)
       this.loginError = res.err
       this.isLogin = (this.loginError === "")
     });
@@ -63,11 +62,9 @@ export class CoursesComponent {
   }
 
   ngOnInit(): void {
-    console.log("onInit()")
     this.id = this.route.snapshot.paramMap.get('id') ?? ""
 
     // check login
-    console.log("checkLogin")
     this.checkLogin()
 
     // load courses data when isLogin
@@ -83,7 +80,8 @@ export class CoursesComponent {
     if (this.id !== "" && dataMap.has(this.id)) {
       this.data = dataMap.get(this.id) ?? null;
       if (this.data !== null) {
-        this.services.loadFiles(this.id).subscribe(files => this.data!.files = files);
+        this.services.loadLectureFiles(this.id).subscribe(files => this.data!.lectureFiles = files);
+        this.services.loadCoursesFiles(this.id).subscribe(files => this.data!.coursesFile = files);
       }
     }
   }

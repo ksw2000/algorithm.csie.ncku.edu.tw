@@ -6,7 +6,8 @@ export interface CoursesData {
     nameZH: string
     nameEN: string
     taList: string[]
-    files?: CoursesFiles
+    lectureFiles?: CoursesFiles // 講義檔案櫃
+    coursesFile? : CoursesFiles // 課程檔案櫃
 }
 
 interface CoursesFile {
@@ -50,4 +51,16 @@ export let dataMap: Map<string, CoursesData> = new Map([
                 "陳亭翰",
             ]
         }],
+    [
+        "2023-algorithm",
+        {
+            code: "F721300",
+            year: 2023,
+            season: "spring",
+            nameZH: "演算法",
+            nameEN: "Algorithm",
+            taList: [
+            ]
+        }
+    ]
 ])

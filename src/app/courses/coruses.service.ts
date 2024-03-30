@@ -20,8 +20,14 @@ export class CoursesService {
     );
   }
 
-  loadFiles(coursedID: string) {
+  loadLectureFiles(coursedID: string) {
     return this.http.get<CoursesFiles>("/api/file?dir="+coursedID, {
+      responseType: "json"
+    })
+  }
+
+  loadCoursesFiles(coursedID: string) {
+    return this.http.get<CoursesFiles>("/api/file?course&dir="+coursedID, {
       responseType: "json"
     })
   }

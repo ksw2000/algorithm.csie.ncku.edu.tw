@@ -27,9 +27,13 @@
         <li>Tel: 06-2757575 ext 62520 #2803</li>
         <li>Fax: (06)2747076</li>
     </ul>
-    <h3>檔案櫃</h3>
-    <ul *ngIf="data.files !== null && data.files && data.files.files !== null">
-        <li *ngFor="let f of data.files.files"><a target="_blank" href="{{f.url}}">{{f.name}}</a></li>
+    <h3>講義</h3>
+    <ul *ngIf="data.lectureFiles !== null && data.lectureFiles && data.lectureFiles.files !== null">
+        <li *ngFor="let f of data.lectureFiles.files"><a target="_blank" href="{{f.url}}">{{f.name}}</a></li>
+    </ul>
+    <h3>課程檔案</h3>
+    <ul *ngIf="data.coursesFile !== null && data.coursesFile && data.coursesFile.files !== null">
+        <li *ngFor="let f of data.coursesFile.files"><a target="_blank" href="{{f.url}}">{{f.name}}</a></li>
     </ul>
     <h3>TA List</h3>
     <ul>
