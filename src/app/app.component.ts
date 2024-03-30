@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private router: Router) { }
 
   toggleSideBar(forceClose: boolean = false) {
-    if(document){
+    if(typeof document !== 'undefined'){
       const menuBtn = document.querySelector('#button-less-900px a i');
       const sideBar = document.getElementById('button-over-900px');
       if (sideBar !== null && menuBtn !== null) {
