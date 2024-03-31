@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule, RouterOutlet } from '@angular/router';
-import { CoursesData, CoursesFiles, dataMap } from './courses.data';
-import { CoursesService, LoginReq } from './coruses.service';
+import { CoursesData, dataMap } from './courses.data';
+import { CoursesService } from './coruses.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -32,7 +32,6 @@ export class CoursesComponent {
 
   // loading the data if this.id is not empty when ngOnInit
   data: CoursesData | null = null;
-  // files: CoursesFiles | null = null;
 
   constructor(private route: ActivatedRoute, private services: CoursesService) { }
 
