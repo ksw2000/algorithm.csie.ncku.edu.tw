@@ -8,12 +8,12 @@ import { MembersComponent } from './members/members.component';
 import { CoursesComponent } from './courses/courses.component';
 
 export const routes: Routes = [
-    { path: 'advisor', component: AdvisorComponent },
-    { path: 'research', component: ResearchComponent },
-    { path: 'publications', component: PublicationsComponent },
-    { path: 'members', component: MembersComponent },
-    { path: 'courses', component: CoursesComponent },
-    { path: 'courses/:id', component: CoursesComponent },
+    { path: 'advisor', component: AdvisorComponent, title: 'Advisor - INHPC' },
+    { path: 'research', component: ResearchComponent, title: 'Research - INHPC' },
+    { path: 'publications', component: PublicationsComponent, title: 'Publications - INHPC' },
+    { path: 'members', component: MembersComponent, title: 'Members - INHPC' },
+    { path: 'courses', component: CoursesComponent, title: 'Courses - INHPC' },
+    { path: 'courses/:id', component: CoursesComponent, title: 'Courses - INHPC' },
     { path: '', component: HomeComponent },
-    { path: '**', pathMatch: 'full', component: PageNotFoundComponent }
+    { path: '**', pathMatch: 'full', component: PageNotFoundComponent, title: 'HTTP404' }
 ];
