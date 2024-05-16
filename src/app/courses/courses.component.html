@@ -5,7 +5,7 @@
 
 <section id="login" class="center" *ngIf="!checkingLogin && !isLogin">
     <p>To access the courses page, please input your student ID.</p>
-    <input autocomplete="off" type="text" name="studentID" placeholder="student ID" [(ngModel)]="inputStudentID" (keydown)="keyEnter($event)" autofocus />
+    <input autocomplete="off" type="password" name="studentID" placeholder="student ID" [(ngModel)]="inputStudentID" (keydown)="keyEnter($event)" autofocus />
     <input type="button" value="Login" (click)="login()" />
     <p *ngIf="loginError !== ''" class="error">{{ loginError }}</p>
     <p>If you have any question, please email to <a href="matilto:algoalgogo&#64;gmail.com">algoalgogo&#64;gmail.com</a>
